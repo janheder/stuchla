@@ -1,45 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="cs">
 
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <title>IVRAKY.cz - Ekologická likvidace autovraků a autovrakoviště</title>
+    <meta name="description"
+        content="Ekologická likvidace autovraků s protokolem na počkání. Výkup vraků za nejlepší ceny, odvoz zdarma. Prodej náhradních dílů se zárukou.">
+    <meta name="keywords"
+        content="likvidace autovraků, autovrakoviště, výkup aut, náhradní díly, ekologická likvidace, Ostrava, Olomouc, Zlín">
+
+    <!-- Stylesheets -->
     <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Sora:wght@100..800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
-
 </head>
 
 <body>
     <section class="hero">
-        <div class="container">
+        <div class="hero-container">
 
             <div class="hero-cell">
-                <img src="img/hero-autovrak.jpg" alt="Ekologická likvidace autovraků" class="hero-cell-bg">
+                <img src="img/hero1.jpg" alt="Ekologická likvidace autovraků" class="hero-cell-bg">
                 <div class="hero-content">
                     <h1 class="hero-title">Ekologická likvidace autovraků</h1>
                     <p class="hero-text">Výkup vraků od 3.000,-kč když nám autovrak dovezete</p>
-                    <div class="hero-buttons">
-                        <a href="#" class="hero-button">Více informací</a>
+                    <div class="hero-footer">
+                        <a href="#" class="btn hero-button">Více informací</a>
                     </div>
                 </div>
             </div>
 
             <div class="hero-cell">
+                <img src="img/hero2.jpg" alt="Autovrakoviště" class="hero-cell-bg">
                 <div class="hero-content">
                     <h1 class="hero-title">Autovrakoviště</h1>
                     <p class="hero-text">Použité náhradní díly se zárukou</p>
-                    <div class="hero-buttons">
-                        <a href="#" class="hero-button">Více informací</a>
+                    <div class="hero-footer">
+                        <a href="#" class="btn hero-button">Více informací</a>
                     </div>
                 </div>
             </div>
-
 
         </div>
     </section>
@@ -88,21 +96,21 @@
                 <h2 class="likvidace-title">Likvidace autovraků</h2>
                 <div class="likvidace-grid">
                     <div class="likvidace-item">
-                        <img src="img/likvidace-item.jpg" alt="Likvidace item" class="likvidace-item-img">
+                        <img src="img/likvidace1.png" alt="Likvidace item" class="likvidace-item-img">
                         <h3 class="likvidace-item-title">Odvezeme váš autovrak</h3>
                         <p>Váš vrak odvezeme, zaplatíme za něj od 2.000,- do 100.000,-Kč. Vystavíme protokol o
                             ekologické likvidaci vozidla a zrušíme Vám zdarma i vozidlo na úřadě.</p>
                         <a href="#" class="btn likvidace-button">Více informací</a>
                     </div>
                     <div class="likvidace-item">
-                        <img src="img/likvidace-item.jpg" alt="Likvidace item" class="likvidace-item-img">
+                        <img src="img/likvidace2.png" alt="Likvidace item" class="likvidace-item-img">
                         <h3 class="likvidace-item-title">Přijedete k nám</h3>
                         <p>Váš vrak odvezeme, zaplatíme za něj od 2.000,- do 100.000,-Kč. Vystavíme protokol o
                             ekologické likvidaci vozidla a zrušíme Vám zdarma i vozidlo na úřadě.</p>
                         <a href="#" class="btn likvidace-button">Více informací</a>
                     </div>
                     <div class="likvidace-item">
-                        <img src="img/likvidace-item.jpg" alt="Likvidace item" class="likvidace-item-img">
+                        <img src="img/likvidace3.png" alt="Likvidace item" class="likvidace-item-img">
                         <h3 class="likvidace-item-title">Autovrak určený na náhradní díly</h3>
                         <p>Ano. Váš nekompletní autovrak odvezeme a za něj dostanete peníze a osvědčení. Výkupní cena je
                             závislá na kompletnosti autovraku.</p>
@@ -186,7 +194,7 @@
                     <h3 class="katalog-item-name">Mazda</h3>
                 </a>
             </div>
-            <a href="#" class="btn katalog-button">Zobrazit všechny vraky</a>
+            <div class="katalog-footer"><a href="#" class="btn katalog-button">Zobrazit všechny vraky</a></div>
         </div>
     </section>
 
@@ -200,7 +208,13 @@
                     <ul class="splide__list">
                         <li class="splide__slide">
                             <div class="testimonial-item">
-                                <div class="testimonial-rating">★★★★★</div>
+                                <div class="testimonial-rating">
+                                    <img src="img/star-on.svg" alt="Star" class="star-icon">
+                                    <img src="img/star-on.svg" alt="Star" class="star-icon">
+                                    <img src="img/star-on.svg" alt="Star" class="star-icon">
+                                    <img src="img/star-on.svg" alt="Star" class="star-icon">
+                                    <img src="img/star-on.svg" alt="Star" class="star-icon">
+                                </div>
                                 <p class="testimonial-text">"Skvělý přístup, auto odvezli hned druhý den a peníze jsem
                                     dostal na ruku. Vše proběhlo bez problémů."</p>
                                 <div class="testimonial-author">Petr Novák</div>
@@ -208,7 +222,13 @@
                         </li>
                         <li class="splide__slide">
                             <div class="testimonial-item">
-                                <div class="testimonial-rating">★★★★★</div>
+                                <div class="testimonial-rating">
+                                    <img src="img/star-on.svg" alt="Star" class="star-icon">
+                                    <img src="img/star-on.svg" alt="Star" class="star-icon">
+                                    <img src="img/star-on.svg" alt="Star" class="star-icon">
+                                    <img src="img/star-on.svg" alt="Star" class="star-icon">
+                                    <img src="img/star-on.svg" alt="Star" class="star-icon">
+                                </div>
                                 <p class="testimonial-text">"Potřeboval jsem náhradní díl na starou Škodu a tady jsem ho
                                     našel za super cenu se zárukou. Doporučuji!"</p>
                                 <div class="testimonial-author">Martin Dvořák</div>
@@ -216,7 +236,13 @@
                         </li>
                         <li class="splide__slide">
                             <div class="testimonial-item">
-                                <div class="testimonial-rating">★★★★★</div>
+                                <div class="testimonial-rating">
+                                    <img src="img/star-on.svg" alt="Star" class="star-icon">
+                                    <img src="img/star-on.svg" alt="Star" class="star-icon">
+                                    <img src="img/star-on.svg" alt="Star" class="star-icon">
+                                    <img src="img/star-on.svg" alt="Star" class="star-icon">
+                                    <img src="img/star-on.svg" alt="Star" class="star-icon">
+                                </div>
                                 <p class="testimonial-text">"Profesionální jednání při ekologické likvidaci. Protokol
                                     vystaven na místě, vše vyřízeno velmi rychle."</p>
                                 <div class="testimonial-author">Jana Svobodová</div>
