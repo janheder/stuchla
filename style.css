@@ -1,0 +1,149 @@
+:root {
+    --font-headings: 'Sora', sans-serif;
+    --font-main: 'Outfit', sans-serif;
+
+    --white: #FFFFFF;
+    --light: #FBFAF9;
+    --dark: #0B0E15;
+    --darker: #0B0E15;
+    --red: #D50000;
+
+    --lime: #9AA820;
+    --lime-dark: #899616;
+
+    --yellow: #FFE500;
+    --yellow-l: #FFF387;
+    --yellow-dark: #FFCC00;
+
+    --gold: #C6A56B;
+
+    --gray: #6D6C79;
+    --green: #1CA561;
+    --border: #E5E5E5;
+
+    --blue: #217FE7;
+    --blue-l: #CEE5FF;
+    --navy: #0A364D;
+
+    --pink: #E71E80;
+    --pink-l: #FFCEE6;
+    --pink-dark: #AD1F64;
+
+    --aqua: #4FEDCC;
+    --aqua-l: #B1F4E6;
+    --aqua-dark: #0EA384;
+
+    --white-rgb: 255 255 255;
+    --black-rgb: 0, 0, 0;
+
+    --font-main: "DM Sans", sans-serif;
+    --font-headings: "Urbanist", sans-serif;
+
+    --border-radius: 6px;
+    --border-radius-pill: 9999px;
+    --border-radius-round: 10px;
+}
+
+html {
+    background-color: var(--white);
+}
+
+body {
+    max-width: 100%;
+    margin: 0 auto;
+    font-family: var(--font-main);
+    color: var(--dark);
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+a {
+    color: var(--dark);
+
+    &:hover,
+    &:active,
+    &:focus {
+        color: var(--darker);
+    }
+}
+
+
+.container {
+    max-width: 1420px;
+    padding-right: 20px;
+    padding-left: 20px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 575px) {
+    .container {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-headings);
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 6rem 0;
+    background-color: var(--light);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 4rem;
+    font-size: 2.5rem;
+}
+
+.testimonial-item {
+    background-color: var(--white);
+    padding: 3rem;
+    border-radius: var(--border-radius-round);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    height: 100%;
+}
+
+.testimonial-rating {
+    color: var(--yellow);
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.testimonial-text {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.testimonial-author {
+    font-weight: 700;
+    font-family: var(--font-headings);
+}
+
+.splide__pagination {
+    bottom: -3rem;
+}
+
+.splide__pagination__page.is-active {
+    background: var(--red);
+}

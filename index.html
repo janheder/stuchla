@@ -7,6 +7,12 @@
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Sora:wght@100..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+
 </head>
 
 <body>
@@ -107,6 +113,26 @@
         </div>
     </section>
 
+    <section class="mapa-odvozu">
+        <div class="container">
+            <div class="mapa-odvozu-img">
+                <img src="img/mapa-odvozu-item.svg" alt="Mapa odvozu item" class="mapa-odvozu-item-img">
+            </div>
+
+            <div class="mapa-odvozu-content">
+                <h2 class="mapa-odvozu-title">Peníze za autovrak v jakémkoliv stavu.</h2>
+                <h3>U nás v autovrakovišti náte jistotu, ke každému vraku máte ihned doklad o ekologické likvidaci.</h3>
+                <p><strong>Odvoz i nepojízdných vraků zdarma z Moravskoslezského , Olomouckého a Zlínského
+                        kraje.</strong>
+                    Ostrava, Frýdek-Místek , Třinec , Český Těšín , Havířov , Karviná , Opava , Nový Jičín , Kopřivnice
+                    ,
+                    Frenštát pod Radhoštěm,
+                    Valašské Meziříčí , Vsetín , Zlín , Přerov , Prostějov , Olomouc a ostatní města.</p>
+            </div>
+        </div>
+    </section>
+
+
     <section class="katalog">
         <div class="container">
             <h2 class="katalog-title">Katalog vraků podle značky</h2>
@@ -166,6 +192,62 @@
 
 
 
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Co o nás říkají zákazníci</h2>
+            <div id="testimonial-slider" class="splide">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <div class="testimonial-item">
+                                <div class="testimonial-rating">★★★★★</div>
+                                <p class="testimonial-text">"Skvělý přístup, auto odvezli hned druhý den a peníze jsem
+                                    dostal na ruku. Vše proběhlo bez problémů."</p>
+                                <div class="testimonial-author">Petr Novák</div>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="testimonial-item">
+                                <div class="testimonial-rating">★★★★★</div>
+                                <p class="testimonial-text">"Potřeboval jsem náhradní díl na starou Škodu a tady jsem ho
+                                    našel za super cenu se zárukou. Doporučuji!"</p>
+                                <div class="testimonial-author">Martin Dvořák</div>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="testimonial-item">
+                                <div class="testimonial-rating">★★★★★</div>
+                                <p class="testimonial-text">"Profesionální jednání při ekologické likvidaci. Protokol
+                                    vystaven na místě, vše vyřízeno velmi rychle."</p>
+                                <div class="testimonial-author">Jana Svobodová</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            new Splide('#testimonial-slider', {
+                type: 'loop',
+                perPage: 3,
+                gap: '2rem',
+                breakpoints: {
+                    1024: {
+                        perPage: 2,
+                    },
+                    768: {
+                        perPage: 1,
+                    },
+                },
+                arrows: true,
+                pagination: true,
+            }).mount();
+        });
+    </script>
 </body>
 
 </html>
