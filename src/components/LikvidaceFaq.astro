@@ -1,0 +1,59 @@
+---
+---
+<section class="likvidace-faq">
+    <div class="container">
+        <h2 class="likvidace-faq-title">Nejčastější dotazy ekologické likvidace autovraků</h2>
+        <div class="faq-list">
+            <details class="faq-item">
+                <summary class="faq-question">Kolik peněz mohu dostat za svůj autovrak?</summary>
+                <div class="faq-answer">
+                    <p>Za autovrak můžete dostat od 3.000,- Kč až do 100.000,- Kč. Záleží na stavu, stáří a kompletnosti
+                        vozu. Cenu vám sdělíme ihned po kontaktu, nejpozději po prohlídce na místě.</p>
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-question">Je ekologická likvidace autovraků opravdu ZDARMA?</summary>
+                <div class="faq-answer">
+                    <p>Ano, ekologická likvidace je vždy zdarma. Vy naopak od nás dostanete výkupní cenu za váš
+                        autovrak, protokol o ekologické likvidaci a odhlásíme Vaše vozidlo na úřadě – vše zdarma.</p>
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-question">Kdy nám dovezete peníze a protokol za ekologickou likvidaci?</summary>
+                <div class="faq-answer">
+                    <p>Peníze a protokol o ekologické likvidaci obdržíte IHNED na místě v hotovosti. Nemusíte nikam
+                        jezdit ani na nic čekat.</p>
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-question">Čeká se dlouho na odtažení vozidla k likvidaci?</summary>
+                <div class="faq-answer">
+                    <p>Ne. V naprosté většině případů jsme schopni autovrak odtáhnout do 24–48 hodin od nahlášení. V
+                        urgentních případech i tentýž den.</p>
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-question">Co potřebuji k likvidaci autovraku?</summary>
+                <div class="faq-answer">
+                    <p>K likvidaci autovraku potřebujete platný občanský průkaz a pokud možno velký technický průkaz. O
+                        vše ostatní se postaráme my.</p>
+                </div>
+            </details>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            item.addEventListener('toggle', () => {
+                if (item.open) {
+                    faqItems.forEach(other => {
+                        if (other !== item) other.removeAttribute('open');
+                    });
+                }
+            });
+        });
+    });
+</script>

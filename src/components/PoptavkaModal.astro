@@ -1,0 +1,97 @@
+---
+---
+<div id="poptavkaModal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button class="modal-close" id="closeModalBtn" aria-label="Zavřít">&times;</button>
+        <h2 id="modalTitle" class="modal-title">Poptávkový formulář</h2>
+        <p class="modal-subtitle">Napište nám, co potřebujete. Odpovíme co nejdříve.</p>
+
+        <form action="#" method="POST" class="poptavka-form">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="frm-name">Jméno a příjmení *</label>
+                    <input type="text" id="frm-name" name="name" required placeholder="Jan Novák">
+                </div>
+                <div class="form-group">
+                    <label for="frm-phone">Telefonní číslo *</label>
+                    <input type="tel" id="frm-phone" name="phone" required placeholder="+420 123 456 789">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="frm-email">E-mailová adresa *</label>
+                <input type="email" id="frm-email" name="email" required placeholder="jan.novak@email.cz">
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="frm-type">Typ poptávky *</label>
+                    <select id="frm-type" name="type" required>
+                        <option value="" disabled selected>Vyberte z možností</option>
+                        <option value="nahradni-dily">Náhradní díly</option>
+                        <option value="ekologicka-likvidace">Ekologická likvidace autovraku</option>
+                        <option value="autoservis">Autoservis</option>
+                        <option value="jine">Jiné</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="frm-car">Značka, model a rok výroby vozu</label>
+                    <input type="text" id="frm-car" name="car" placeholder="Např. Škoda Octavia 2015">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="frm-message">Vaše zpráva / detail poptávky *</label>
+                <textarea id="frm-message" name="message" rows="4" required
+                    placeholder="Dobrý den, poptávám..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-submit">Odeslat poptávku</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const modal = document.getElementById('poptavkaModal');
+        const closeBtn = document.getElementById('closeModalBtn');
+        const openBtns = document.querySelectorAll('a.btn, button.btn, a.btn-header');
+
+        // Open modal
+        openBtns.forEach(btn => {
+            if (btn.textContent.includes('Poptávkový formulář')) {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    modal.classList.add('is-open');
+                    document.body.style.overflow = 'hidden'; // prevent scrolling
+                });
+            }
+        });
+
+        // Close modal
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                modal.classList.remove('is-open');
+                document.body.style.overflow = '';
+            });
+        }
+
+        // Close on clicking outside the box
+        if (modal) {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('is-open');
+                    document.body.style.overflow = '';
+                }
+            });
+        }
+
+        // Close on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal && modal.classList.contains('is-open')) {
+                modal.classList.remove('is-open');
+                document.body.style.overflow = '';
+            }
+        });
+    });
+</script>
