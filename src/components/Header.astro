@@ -23,7 +23,11 @@
             <a href="#" class="btn btn-outline-yellow btn-header"
                 >Poptávkový formulář</a
             >
-            <button class="header-search-btn" aria-label="Hledat">
+            <button
+                class="header-search-btn"
+                id="searchToggle"
+                aria-label="Hledat"
+            >
                 <img src="/img/search-white.svg" alt="Hledat" />
             </button>
             <button
@@ -39,9 +43,66 @@
     </div>
 </header>
 
+<div class="search-overlay" id="searchOverlay">
+    <div class="container search-container">
+        <form action="/hledat" method="GET" class="search-form">
+            <input
+                type="text"
+                name="q"
+                placeholder="Hledat náhradní díly, služby..."
+                class="search-input"
+                id="searchInput"
+            />
+            <button type="submit" class="search-submit">
+                <img src="/img/search-white.svg" alt="Hledat" />
+            </button>
+        </form>
+        <button
+            class="search-close"
+            id="searchClose"
+            aria-label="Zavřít hledání">&times;</button
+        >
+    </div>
+</div>
+
 <div class="menu-backdrop" id="menuBackdrop"></div>
 
 <script>
+    const setupSearch = () => {
+        const searchToggle = document.getElementById("searchToggle");
+        const searchOverlay = document.getElementById("searchOverlay");
+        const searchClose = document.getElementById("searchClose");
+        const searchInput = document.getElementById(
+            "searchInput",
+        ) as HTMLInputElement;
+
+        if (!searchToggle || !searchOverlay || !searchClose || !searchInput)
+            return;
+
+        searchToggle.addEventListener("click", () => {
+            searchOverlay.classList.add("active");
+            document.body.classList.add("search-open");
+            setTimeout(() => searchInput.focus(), 100);
+        });
+
+        const closeSearch = () => {
+            searchOverlay.classList.remove("active");
+            document.body.classList.remove("search-open");
+        };
+
+        searchClose.addEventListener("click", closeSearch);
+
+        // Close on ESC
+        document.addEventListener("keydown", (e) => {
+            if (
+                e.key === "Escape" &&
+                searchOverlay.classList.contains("active")
+            ) {
+                closeSearch();
+            }
+        });
+    };
+
     const setupMenu = () => {
         const menuToggle = document.getElementById("menuToggle");
         const headerNav = document.getElementById("headerNav");
@@ -71,4 +132,5 @@
     };
 
     setupMenu();
+    setupSearch();
 </script>
