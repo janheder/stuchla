@@ -2665,6 +2665,8 @@ body.menu-open {
     font-size: 1.4rem;
     font-weight: 600;
     color: var(--dark);
+    padding: 0.8rem 1.5rem;
+    background: var(--white);
 }
 
 .blog-row .btn {
@@ -2728,7 +2730,7 @@ body.menu-open {
 
 .blog-detail-header {
     text-align: center;
-    margin-bottom: 6rem;
+    margin-bottom: 4rem;
 }
 
 .blog-detail-title {
