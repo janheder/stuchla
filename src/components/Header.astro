@@ -1,14 +1,15 @@
 <div class="header-top-bar">
     <div class="container">
-        Protokol o ekologické likvidaci a peníze za výkup IHNED. Zrušení na úřadě a odtah zdarma. Volejte: 606 74 11 11.
+        Protokol o ekologické likvidaci a peníze za výkup IHNED. Zrušení na
+        úřadě a odtah zdarma. Volejte: 606 74 11 11.
     </div>
 </div>
 <header class="site-header">
     <div class="container header-container">
         <a href="/" class="header-logo">
-            <img src="/img/logo.png" alt="Autovrakoviště Sviadnov">
+            <img src="/img/logo.png" alt="Autovrakoviště Sviadnov" />
         </a>
-        <nav class="header-nav">
+        <nav class="header-nav" id="headerNav">
             <ul>
                 <li><a href="/likvidace">Likvidace</a></li>
                 <li><a href="/autovrakoviste">Autovrakoviště</a></li>
@@ -19,10 +20,55 @@
             </ul>
         </nav>
         <div class="header-actions">
-            <a href="#" class="btn btn-outline-yellow btn-header">Poptávkový formulář</a>
+            <a href="#" class="btn btn-outline-yellow btn-header"
+                >Poptávkový formulář</a
+            >
             <button class="header-search-btn" aria-label="Hledat">
-                <img src="/img/search-white.svg" alt="Hledat">
+                <img src="/img/search-white.svg" alt="Hledat" />
+            </button>
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Otevřít menu"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
         </div>
     </div>
 </header>
+
+<div class="menu-backdrop" id="menuBackdrop"></div>
+
+<script>
+    const setupMenu = () => {
+        const menuToggle = document.getElementById("menuToggle");
+        const headerNav = document.getElementById("headerNav");
+        const menuBackdrop = document.getElementById("menuBackdrop");
+        const body = document.body;
+
+        if (!menuToggle || !headerNav || !menuBackdrop) return;
+
+        const toggleMenu = () => {
+            menuToggle.classList.toggle("active");
+            headerNav.classList.toggle("active");
+            menuBackdrop.classList.toggle("active");
+            body.classList.toggle("menu-open");
+        };
+
+        menuToggle.addEventListener("click", toggleMenu);
+        menuBackdrop.addEventListener("click", toggleMenu);
+
+        // Close menu on link click
+        headerNav.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", () => {
+                if (headerNav.classList.contains("active")) {
+                    toggleMenu();
+                }
+            });
+        });
+    };
+
+    setupMenu();
+</script>

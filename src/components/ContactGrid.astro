@@ -1,0 +1,132 @@
+---
+const contacts = [
+{
+title: "Likvidace vozidel a výkup",
+phone1: "606 741 111",
+phone2: "558 655 144",
+icon: "likvidace"
+},
+{
+title: "Autovrakoviště a náhradní díly",
+phone1: "606 781 111",
+phone2: "602 660 066",
+icon: "vrakoviste"
+},
+{
+title: "Autoservis",
+phone1: "607 888 880",
+phone2: "606 741 111",
+icon: "autoservis"
+},
+{
+title: "Pneuservis",
+phone1: "602 781 111",
+icon: "pneuservis"
+},
+{
+title: "Půjčovna vleků",
+phone1: "607 888 880",
+icon: "prives"
+},
+{
+title: "Autobazar",
+phone1: "602 751 981",
+icon: "autobazar"
+},
+{
+title: "Odtahová služba",
+phone1: "606 741 111",
+icon: "odtah"
+},
+{
+title: "Pojištění vozidel / účetní",
+phone1: "602 741 111",
+icon: "pojisteni"
+}
+];
+
+const getIconContent = (type: string) => {
+switch(type) {
+case 'likvidace':
+return `
+<path d="m10.2 6.8-3.95 3.96M13.8 6.8l3.95 3.96M8.2 14.8h.01M15.8 14.8h.01" />
+<path
+    d="M17.18 10H6.82a2 2 0 0 0-1.9 1.45l-1.8 5.4A1 1 0 0 0 4 18h16a1 1 0 0 0 .88-1.15l-1.8-5.4A2 2 0 0 0 17.18 10Z" />
+<path d="M5.5 10 7.8 4.2A2 2 0 0 1 9.7 2.8h4.6a2 2 0 0 1 1.9 1.4L18.5 10" />`;
+case 'vrakoviste':
+return `
+<circle cx="12" cy="12" r="3" />
+<path
+    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+`;
+case 'autoservis':
+return `
+<path
+    d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+`;
+case 'pneuservis':
+return `
+<circle cx="12" cy="12" r="10" />
+<circle cx="12" cy="12" r="4" />
+<path d="M12 2v2" />
+<path d="M12 20v2" />
+<path d="M22 12h-2" />
+<path d="M4 12H2" />
+<path d="m4.93 4.93 1.41 1.41" />
+<path d="m17.66 17.66 1.41 1.41" />
+<path d="m4.93 19.07 1.41-1.41" />
+<path d="m17.66 6.34 1.41-1.41" />`;
+case 'prives':
+return `
+<rect width="14" height="8" x="6" y="8" rx="1" ry="1" />
+<circle cx="10" cy="18" r="2" />
+<circle cx="16" cy="18" r="2" />
+<path d="M2 14h4" />`;
+case 'autobazar':
+return `
+<path
+    d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2" />
+<circle cx="7" cy="17" r="2" />
+<circle cx="17" cy="17" r="2" />`;
+case 'odtah':
+return `
+<path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2" />
+<path d="M15 18H9" />
+<path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14" />
+<circle cx="17" cy="18" r="2" />
+<circle cx="7" cy="18" r="2" />`;
+case 'pojisteni':
+return `
+<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+<path d="m9 12 2 2 4-4" />`;
+default:
+return '';
+}
+}
+---
+
+<section class="contact-grid-section">
+    <div class="container">
+        <div class="contact-grid">
+            {contacts.map((contact) => (
+            <div class="contact-card">
+                <div class="contact-card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" set:html={getIconContent(contact.icon)} />
+                </div>
+                <h3 class="contact-card-title">{contact.title}</h3>
+
+                <div class="contact-card-phone-wrapper">
+                    <div class="contact-card-phone-icon">
+                        <img src="/img/icon-phone-dark.svg" alt="Telefon" />
+                    </div>
+                    <div class="contact-card-phone-numbers">
+                        <a href={`tel:${contact.phone1.replace(/\s/g, '' )}`}>{contact.phone1}</a>
+                        {contact.phone2 && <a href={`tel:${contact.phone2.replace(/\s/g, '' )}`}>{contact.phone2}</a>}
+                    </div>
+                </div>
+            </div>
+            ))}
+        </div>
+    </div>
+</section>

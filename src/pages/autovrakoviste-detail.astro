@@ -1,0 +1,113 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import VrakovisteSidebar from '../components/VrakovisteSidebar.astro';
+---
+
+<Layout title="Škoda Superb 1.9 TDI | Autovrakoviště">
+    <Breadcrumbs />
+
+    <div class="container">
+        <div class="vrakoviste-layout">
+            <VrakovisteSidebar />
+
+            <main class="vrakoviste-main">
+                <div class="product-detail-grid">
+                    <!-- Gallery Column -->
+                    <div class="product-gallery">
+                        <div class="main-img-wrap">
+                            <div class="detail-badges-left">
+                                <span class="badge-tag-item sleva">Sleva</span>
+                                <span class="badge-tag-item bestseller">Bestseller</span>
+                            </div>
+                            <div class="detail-badge-red">-16%</div>
+                            <img src="https://images.unsplash.com/photo-1542282088-fe8426682b8f?auto=format&fit=crop&q=80&w=1000"
+                                alt="Škoda Superb 1.9 TDI" />
+                        </div>
+                        <div class="thumb-grid">
+                            <div class="thumb-item"><img
+                                    src="https://images.unsplash.com/photo-1542282088-fe8426682b8f?auto=format&fit=crop&q=80&w=300"
+                                    alt="thumbnail" /></div>
+                            <div class="thumb-item"><img
+                                    src="https://images.unsplash.com/photo-1542282088-fe8426682b8f?auto=format&fit=crop&q=80&w=300"
+                                    alt="thumbnail" /></div>
+                            <div class="thumb-item"><img
+                                    src="https://images.unsplash.com/photo-1542282088-fe8426682b8f?auto=format&fit=crop&q=80&w=300"
+                                    alt="thumbnail" /></div>
+                        </div>
+                    </div>
+
+                    <!-- Info Column -->
+                    <div class="detail-info-wrap">
+                        <h1>Škoda Superb 1.9 TDI</h1>
+                        <p class="detail-subtitle">z Subaru Outback r.2002</p>
+
+                        <div class="blue-info-box">
+                            <h4>MÁME VOZY I V JINÝCH BARVÁCH A MOTORIZACÍCH NEŽ INZERUJEME.</h4>
+                            <div class="blue-info-phone">ZAVOLEJTE A ZEPTEJTE SE: 608 78 11 11</div>
+                            <p class="blue-info-text">
+                                Vždycky se nám nepodaří dát všechny auta na web. Proto se informujte telefonicky na
+                                skladovou dostupnost jiných barevných variant u tohoto vozidla.
+                            </p>
+                        </div>
+
+                        <a href="#" class="btn btn-koupit">Koupit na eshopu</a>
+
+                        <div class="product-description-wrap">
+                            <div class="description-header">POPIS PRODUKTU</div>
+                            <div class="description-content">
+                                <p>Motor EJ25 2.5 AWD 115kW z Subaru Outback r.2002</p>
+                                <p>Kód produktu: 17480</p>
+                                <p>V případě zájmu napište nebo zavolejte.</p>
+                                <p>Díly zasíláme dobírkou po celé ČR a SK nebo osobní odběr.</p>
+                                <p>Záruka na veškeré starší náhradní díly je 30. dní.</p>
+                                <p>Z časových důvodů upřednostňujeme telefonický kontakt v době od 8:00 do 16:00. Na
+                                    email samozřejmě odpovíme, ale nemusí to být ihned.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form Section -->
+                <section class="vrakoviste-contact-section">
+                    <div class="contact-form-header">
+                        <h2>Máte dotaz? Napište nám</h2>
+                        <p>Chcete-li se na cokoliv zeptat, tak neváhejte a kontaktujte nás.</p>
+                    </div>
+
+                    <form action="#" class="contact-form">
+                        <div class="contact-form-grid">
+                            <div class="form-group">
+                                <label for="name">Vaše jméno</label>
+                                <input type="text" id="name" placeholder="Petr Novák" />
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Váš telefon</label>
+                                <input type="tel" id="phone" />
+                            </div>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 3rem;">
+                            <label for="email">Váš e-mail</label>
+                            <input type="email" id="email" />
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 4rem;">
+                            <label for="message">Zpráva</label>
+                            <textarea id="message" placeholder="text zprávy...."></textarea>
+                        </div>
+
+                        <div class="contact-form-footer">
+                            <label class="gdpr-wrap">
+                                <input type="checkbox" />
+                                <span>Odesláním formuláře potvrzuji seznámení s Poučením a zpracování osobních
+                                    údajů</span>
+                            </label>
+                            <button type="submit" class="btn btn-send-form">Odeslat dotaz</button>
+                        </div>
+                    </form>
+                </section>
+            </main>
+        </div>
+    </div>
+</Layout>

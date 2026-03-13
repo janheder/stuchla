@@ -1,15 +1,27 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
-
-import CtaSplit from '../components/CtaSplit.astro';
+import Layout from "../layouts/Layout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import BlogRow from "../components/BlogRow.astro";
+import Pagination from "../components/Pagination.astro";
+import type { date } from "astro:schema";
 ---
 
-<Layout>
-    <Hero />
+<Layout title="Články na blogu">
     <Breadcrumbs />
 
+    <section class="blog-list-section">
+        <div class="container">
+            <h1 class="blog-list-title">Články na blogu</h1>
 
+            <BlogRow />
+            <BlogRow />
+            <BlogRow />
+            <BlogRow />
+            <BlogRow />
+            <BlogRow />
+            <BlogRow />
 
-    <CtaSplit />
+            <Pagination />
+        </div>
+    </section>
 </Layout>

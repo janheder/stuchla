@@ -1,0 +1,81 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import VrakovisteSidebar from '../components/VrakovisteSidebar.astro';
+import ProductCard from '../components/ProductCard.astro';
+import Pagination from '../components/Pagination.astro';
+
+
+
+
+---
+
+<Layout title='Autovrakoviště Alfa Romeo'>
+    <Breadcrumbs />
+
+    <div class="container">
+        <div class="vrakoviste-layout">
+            <VrakovisteSidebar />
+
+            <main class="vrakoviste-main">
+                <h1 class="vrakoviste-title">Autovrakoviště Alfa Romeo</h1>
+
+                <div class="models-grid">
+
+                    <a href="#" class="model-card">
+                        <img src="/img/logos/logo-bmw.png" alt="Model auta 1" />
+                        <span>Model auta 1</span>
+                    </a>
+
+                    <a href="#" class="model-card">
+                        <img src="/img/logos/logo-bmw.png" alt="Model auta 1" />
+                        <span>Model auta 1</span>
+                    </a>
+
+                    <a href="#" class="model-card">
+                        <img src="/img/logos/logo-bmw.png" alt="Model auta 1" />
+                        <span>Model auta 1</span>
+                    </a>
+
+                    <a href="#" class="model-card">
+                        <img src="/img/logos/logo-bmw.png" alt="Model auta 1" />
+                        <span>Model auta 1</span>
+                    </a>
+
+
+                </div>
+
+                <div class="filter-bar">
+                    <span>Zobrazeno 12 z 160 produktů</span>
+                    <Pagination />
+                </div>
+
+                <div class="product-grid">
+
+                    <ProductCard />
+                    <ProductCard />
+                    <ProductCard />
+
+                    <ProductCard />
+                    <ProductCard />
+                    <ProductCard />
+
+                    <ProductCard />
+                    <ProductCard />
+                    <ProductCard />
+
+                    <ProductCard />
+                    <ProductCard />
+                    <ProductCard />
+
+                    <ProductCard />
+                    <ProductCard />
+                    <ProductCard />
+
+                </div>
+
+                <Pagination />
+            </main>
+        </div>
+    </div>
+</Layout>
