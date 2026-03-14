@@ -1,43 +1,59 @@
-# Astro Starter Kit: Minimal
+# Autovrakoviště Sviadnov (IVRAKY.cz)
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Moderní webová prezentace pro autovrakoviště, výkup a ekologickou likvidaci autovraků, prodej náhradních dílů a autoservis. Projekt je postaven na rychlém a moderním statickém generátoru [Astro](https://astro.build/) s čistým HTML a custom CSS pro maximální rychlost a uživatelský zážitek.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🚀 Technologie & Vlastnosti
 
-## 🚀 Project Structure
+*   **Astro Framework:** Komponentově orientovaný statický generátor zaměřený na výkon.
+*   **Custom CSS:** Vlastní rozsáhlý stylopis `public/style.css` založený na sadě CSS proměnných (barvy, weby) pro jednoduchou údržbu vizuální identity a layoutů.
+*   **Responzivní design:** Veškeré sekce jsou plně přizpůsobeny pro mobilní a desktopová zařízení s využitím moderních grid/flexbox přístupů.
+*   **Interaktivní funkce:** Obsahuje překryvné vyhledávání (`search overlay`), poptávkové modální okno (`PoptavkaModal.astro`) a responzivní ovládání navigace v hlavičce (`Header.astro`).
+*   **Splide.js:** Plynulé frontend slidery s dynamickým ovládáním (např. sekce zákaznických hodnocení).
+*   **FsLightbox:** Integrace elegantních překryvných fotogalerií a zvětšení obrázků (`ContactSection`, `ContactSectionLight`, galerie vozů aj.).
 
-Inside of your Astro project, you'll see the following folders and files:
+## 📂 Struktura Projektu
+
+Projekt logicky rozděluje šablony (layouts), specifické komponenty (components) a samotné cesty podstránek (pages):
 
 ```text
 /
-├── public/
+├── public/                 # Statické soubory, které nepodléhají buildu (obrázky, ikony SVG, `style.css`)
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── components/         # Astro komponenty rozdělené do funkčních bloků (Header, Footer, Grid, Banner, Form...)
+│   ├── layouts/            # Základní layout obalující aplikace (připojení stylů, meta hlavičky, sloty pro obsah)
+│   └── pages/              # Definice podstránek generovaných Astro routováním:
+│       ├── index.astro            # Úvodní domovská stránka (Home)
+│       ├── autovrakoviste.astro   # Přehled autovrakoviště, značek a skladů (katalog)
+│       ├── autoservis.astro       # Informace a ceník k autoservisu
+│       ├── likvidace.astro        # Stránka zaměřená detailům ekologické likvidace vozidel
+│       ├── kontakty.astro         # Otevírací hodiny a kontaktní údaje 
+│       ├── blog.astro             # Výpis tematických článků a aktualit webu
+│       └── blog-detail.astro      # Strana ukázkového článku/detialu novinky
+│
+├── package.json            # Závislosti Node.js (Astro cli plugin ad.) a spouštěcí npm příkazy 
+└── astro.config.mjs        # Konfigurace základního běhu platformy Astro
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 💻 Spuštění pro vývoj (Development)
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Poté co si projekt zkopírujete na lokální disk, využijte standardní CLI NPM příkazy:
 
-Any static assets, like images, can be placed in the `public/` directory.
+1. Zkompilovat/Nainstalovat potřebné balíčky aplikací:
+```bash
+npm install
+```
 
-## 🧞 Commands
+2. Spuštění lokálního testovacího serveru na adrese s živým aktualizováním (typically `http://localhost:4321/`):
+```bash
+npm run dev
+```
 
-All commands are run from the root of the project, from a terminal:
+## 🏗️ Build do produkce (Production Build)
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Pro finální nahrání stránek na libovolný webový hosting projekt plně vygeneruje statické připravené soubory (výstupy HTML, zabalenou JS strukturu).
 
-## 👀 Want to learn more?
+```bash
+npm run build
+```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Zkompilované soubory se automaticky uloží do cílové podsložky `dist/`. Celá složka `dist` tak tvoří hotový čistý statický web bez nutnosti složité databáze. Poté vygenerovaný obsah už stačí jen nahrát na server pomocí protokolu FTP či deployment systémů (Vercel, Netlify, Github Pages aj.).
