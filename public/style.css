@@ -146,7 +146,7 @@ h6 {
 }
 
 h2 {
-    font-size: 28px;
+    font-size: 2.8rem;
 }
 
 section {
@@ -155,7 +155,7 @@ section {
 
 /* Hero Section */
 .hero {
-    padding: 20px;
+    padding: 2rem;
 
 }
 
@@ -309,7 +309,7 @@ section {
 
 .katalog-title {
     text-align: center;
-    margin-bottom: 6.4rem;
+    margin-bottom: 4rem;
 }
 
 .katalog-grid {
@@ -406,6 +406,7 @@ section {
     text-align: left;
     margin-bottom: 2rem;
     color: var(--blue);
+    font-size: 2rem;
 }
 
 .mapa-odvozu-content h3 {
@@ -857,12 +858,13 @@ section {
 @media screen and (max-width: 1024px) {
     .cta-split-container {
         flex-direction: column;
+        gap: 1rem;
     }
 }
 
 @media screen and (max-width: 768px) {
     .cta-card {
-        padding: 4.8rem 2.4rem;
+        padding: 2rem 2.4rem;
     }
 
     .cta-content {
@@ -1130,6 +1132,7 @@ section {
     .footer-top-container {
         flex-direction: column;
         gap: 3.2rem;
+        padding-bottom: 2rem;
     }
 
     .footer-logo {
@@ -1155,6 +1158,10 @@ section {
         flex-direction: column;
         gap: 2rem;
         text-align: center;
+    }
+
+    .footer-main {
+        padding: 5rem 0 0 0;
     }
 }
 
@@ -1631,7 +1638,8 @@ body.menu-open {
 /* ------------------------------------- */
 
 .nahradni-hero {
-    padding: 2rem 0 6rem 0;
+    padding: 2rem 0 0rem 0;
+    background: linear-gradient(to top, var(--light) 0, var(--light) 80px, var(--white) 80px, var(--white) 100%);
 }
 
 .nahradni-hero .cta-card {
@@ -1666,7 +1674,6 @@ body.menu-open {
 
 .nahradni-features-main-title {
     text-align: center;
-    font-size: 3.6rem;
     color: var(--dark);
     font-family: var(--font-headings);
     font-weight: 700;
@@ -1717,10 +1724,12 @@ body.menu-open {
 @media screen and (max-width: 1024px) {
     .nahradni-hero .cta-split-container {
         flex-direction: column;
+        gap: 1rem;
     }
 
     .nahradni-features-grid {
         grid-template-columns: 1fr;
+        gap: 5px;
     }
 }
 
@@ -1957,7 +1966,7 @@ body.menu-open {
 }
 
 .likvidace-action-label {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     color: var(--white);
     line-height: 1.4;
 }
@@ -2432,7 +2441,7 @@ body.menu-open {
 
 .faq-answer p {
     font-size: 1.6rem;
-    color: var(--gray);
+    color: var(--dark);
     line-height: 1.7;
 }
 
@@ -2846,6 +2855,39 @@ body.menu-open {
     flex-shrink: 0;
 }
 
+.sidebar-toggle-btn {
+    display: none;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+    background-color: var(--dark);
+    color: var(--white);
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 0rem;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar-toggle-btn:hover {
+    background-color: #2A2D33;
+}
+
+.sidebar-toggle-btn svg {
+    transition: transform 0.3s ease;
+}
+
+.sidebar-toggle-btn.active svg {
+    transform: rotate(180deg);
+}
+
+.sidebar-content {
+    display: block;
+}
+
 .sidebar-title {
     font-size: 1.4rem;
     font-weight: 700;
@@ -3075,6 +3117,32 @@ body.menu-open {
 
     .vrakoviste-sidebar {
         width: 100%;
+    }
+
+    .sidebar-toggle-btn {
+        display: flex;
+    }
+
+    .sidebar-content {
+        display: none;
+        margin-top: 1rem;
+    }
+
+    .sidebar-content.active {
+        display: block;
+        animation: slideDown 0.3s ease-out;
+    }
+
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     .product-grid {
@@ -3327,6 +3395,7 @@ body.menu-open {
 @media screen and (max-width: 1024px) {
     .product-detail-grid {
         grid-template-columns: 1fr;
+        margin-bottom: 2rem;
     }
 
     .contact-form-grid {
@@ -3335,6 +3404,7 @@ body.menu-open {
 
     .vrakoviste-contact-section {
         padding: 3rem;
+        margin: 0;
     }
 
     .contact-form-footer {
@@ -3816,7 +3886,10 @@ body.search-open {
     .mapa-odvozu,
     .katalog,
     .testimonials,
-    .blog {
+    .blog,
+    .likvidace-faq,
+    .likvidace-pricing,
+    .nahradni-features {
         padding: 6rem 0;
     }
 
@@ -3848,5 +3921,64 @@ body.search-open {
     .katalog-grid {
         grid-template-columns: 1fr 1fr;
         gap: 5px;
+    }
+
+    .filter-bar span {
+        display: none;
+    }
+}
+
+.likvidace-eco-logos {
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media screen and (max-width: 1024px) {
+    .likvidace-hero-bg {
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+
+    }
+
+    .likvidace-hero-container {
+        padding: 3rem;
+    }
+
+    .likvidace-hero-text {
+        margin-bottom: 2rem;
+    }
+}
+
+.likvidace-hero-action .btn-phone {
+    white-space: nowrap;
+}
+
+.likvidace-hero-action {
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media screen and (max-width: 600px) {
+    .likvidace-hero-container {
+        padding: 2rem;
+        gap: 0rem;
+    }
+
+    .likvidace-hero-content {
+        padding: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .likvidace-hero-container {
+        padding: 0rem;
+        gap: 0rem;
+    }
+
+    .eshop-item-big .eshop-item-title {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
     }
 }

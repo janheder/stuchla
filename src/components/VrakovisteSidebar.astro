@@ -1,30 +1,57 @@
 ---
 ---
 <aside class="vrakoviste-sidebar">
-    <div class="sidebar-search">
-        <h4 class="sidebar-title">VYHLEDÁVÁNÍ</h4>
-        <div class="search-box">
-            <input type="text" placeholder="Zadejte název ..." />
-            <button class="search-btn">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                </svg>
-            </button>
+    <button class="sidebar-toggle-btn" id="sidebarToggle">
+        <span>Zobrazit kategorie a vyhledávání</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+    </button>
+
+    <div class="sidebar-content" id="sidebarContent">
+        <div class="sidebar-search">
+            <h4 class="sidebar-title">VYHLEDÁVÁNÍ</h4>
+            <div class="search-box">
+                <input type="text" placeholder="Zadejte název ..." />
+                <button class="search-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+            </div>
         </div>
+        <ul class="category-list">
+            <li class="active"><a href="#">Alfa Romeo <span class="count">28</span></a></li>
+            <li><a href="#">Alfa Romeo <span class="count">28</span></a></li>
+            <li><a href="#">Alfa Romeo</a></li>
+            <li><a href="#">Alfa Romeo</a></li>
+            <li><a href="#">Alfa Romeo</a></li>
+            <li><a href="#">Alfa Romeo</a></li>
+            <li><a href="#">Alfa Romeo</a></li>
+            <li><a href="#">Alfa Romeo</a></li>
+            <li><a href="#">Alfa Romeo</a></li>
+            <li><a href="#">Alfa Romeo</a></li>
+            <li><a href="#">Alfa Romeo</a></li>
+        </ul>
     </div>
-    <ul class="category-list">
-        <li class="active"><a href="#">Alfa Romeo <span class="count">28</span></a></li>
-        <li><a href="#">Alfa Romeo <span class="count">28</span></a></li>
-        <li><a href="#">Alfa Romeo</a></li>
-        <li><a href="#">Alfa Romeo</a></li>
-        <li><a href="#">Alfa Romeo</a></li>
-        <li><a href="#">Alfa Romeo</a></li>
-        <li><a href="#">Alfa Romeo</a></li>
-        <li><a href="#">Alfa Romeo</a></li>
-        <li><a href="#">Alfa Romeo</a></li>
-        <li><a href="#">Alfa Romeo</a></li>
-        <li><a href="#">Alfa Romeo</a></li>
-    </ul>
 </aside>
+
+<script>
+    const toggleBtn = document.getElementById('sidebarToggle');
+    const content = document.getElementById('sidebarContent');
+
+    if (toggleBtn && content) {
+        toggleBtn.addEventListener('click', () => {
+            const isVisible = content.classList.toggle('active');
+            toggleBtn.classList.toggle('active');
+            
+            // Update text based on state
+            const btnText = toggleBtn.querySelector('span');
+            if (btnText) {
+                btnText.textContent = isVisible ? 'Skrýt kategorie a vyhledávání' : 'Zobrazit kategorie a vyhledávání';
+            }
+        });
+    }
+</script>
