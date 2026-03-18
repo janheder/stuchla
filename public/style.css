@@ -1497,9 +1497,15 @@ body.menu-open {
     gap: 2rem;
 }
 
+.feature-icon {
+    display: flex;
+}
+
 .feature-icon img {
     height: 4.5rem;
-    width: auto;
+    width: 4.5rem;
+    flex-shrink: 0;
+    display: flex;
 }
 
 .feature-text {
