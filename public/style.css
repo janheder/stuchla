@@ -1111,8 +1111,9 @@ section {
 }
 
 .signature img {
-    height: 1.8rem;
+    height: 2.2rem;
     width: auto;
+    margin-top: -5px;
 }
 
 /* Responsive Footer */
