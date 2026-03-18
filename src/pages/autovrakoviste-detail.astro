@@ -15,25 +15,42 @@ import VrakovisteSidebar from '../components/VrakovisteSidebar.astro';
                 <div class="product-detail-grid">
                     <!-- Gallery Column -->
                     <div class="product-gallery">
-                        <div class="main-img-wrap">
+                        <div class="main-img-wrap" id="mainImageWrap" style="cursor: pointer;">
                             <div class="detail-badges-left">
                                 <span class="badge-tag-item sleva">Sleva</span>
                                 <span class="badge-tag-item bestseller">Bestseller</span>
                             </div>
                             <div class="detail-badge-red">-16%</div>
-                            <img src="https://images.unsplash.com/photo-1542282088-fe8426682b8f?auto=format&fit=crop&q=80&w=1000"
+                            <img id="mainImage"
+                                src="https://images.unsplash.com/photo-1542282088-fe8426682b8f?auto=format&fit=crop&q=80&w=1000"
                                 alt="Škoda Superb 1.9 TDI" />
                         </div>
                         <div class="thumb-grid">
-                            <div class="thumb-item"><img
-                                    src="https://images.unsplash.com/photo-1542282088-fe8426682b8f?auto=format&fit=crop&q=80&w=300"
-                                    alt="thumbnail" /></div>
-                            <div class="thumb-item"><img
-                                    src="https://images.unsplash.com/photo-1542282088-fe8426682b8f?auto=format&fit=crop&q=80&w=300"
-                                    alt="thumbnail" /></div>
-                            <div class="thumb-item"><img
-                                    src="https://images.unsplash.com/photo-1542282088-fe8426682b8f?auto=format&fit=crop&q=80&w=300"
-                                    alt="thumbnail" /></div>
+                            <div class="thumb-item active" data-index="0"
+                                data-src="https://images.unsplash.com/photo-1542282088-fe8426682b8f?auto=format&fit=crop&q=80&w=1000">
+                                <img src="https://images.unsplash.com/photo-1542282088-fe8426682b8f?auto=format&fit=crop&q=80&w=300"
+                                    alt="thumbnail 1" />
+                            </div>
+                            <div class="thumb-item" data-index="1"
+                                data-src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80&w=1000">
+                                <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80&w=300"
+                                    alt="thumbnail 2" />
+                            </div>
+                            <div class="thumb-item" data-index="2"
+                                data-src="https://images.unsplash.com/photo-1542282088-fe8426682b8f?auto=format&fit=crop&q=80&w=1000">
+                                <img src="https://images.unsplash.com/photo-1542282088-fe8426682b8f?auto=format&fit=crop&q=80&w=300"
+                                    alt="thumbnail 3" />
+                            </div>
+                        </div>
+
+                        <!-- Hidden lightbox gallery links -->
+                        <div style="display: none;">
+                            <a data-fslightbox="productGallery"
+                                href="https://images.unsplash.com/photo-1542282088-fe8426682b8f?auto=format&fit=crop&q=80&w=1000"></a>
+                            <a data-fslightbox="productGallery"
+                                href="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80&w=1000"></a>
+                            <a data-fslightbox="productGallery"
+                                href="https://images.unsplash.com/photo-1542282088-fe8426682b8f?auto=format&fit=crop&q=80&w=1000"></a>
                         </div>
                     </div>
 
@@ -110,4 +127,44 @@ import VrakovisteSidebar from '../components/VrakovisteSidebar.astro';
             </main>
         </div>
     </div>
+
+    <!-- Lightbox Script -->
+    <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.4.1/index.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const thumbs = document.querySelectorAll('.thumb-item');
+            const mainImage = document.getElementById('mainImage');
+            const mainImageWrap = document.getElementById('mainImageWrap');
+            let currentIndex = 0;
+
+            if (thumbs.length && mainImage && mainImageWrap) {
+                // Initialize active class for first item
+                thumbs[0].classList.add('active');
+
+                thumbs.forEach((thumb) => {
+                    thumb.addEventListener('click', function () {
+                        // Remove active class from all, add to clicked
+                        thumbs.forEach(t => t.classList.remove('active'));
+                        this.classList.add('active');
+
+                        // Update image
+                        const newSrc = this.getAttribute('data-src');
+                        if (newSrc) {
+                            mainImage.src = newSrc;
+                        }
+
+                        // Update index for lightbox
+                        currentIndex = parseInt(this.getAttribute('data-index') || '0', 10);
+                    });
+                });
+
+                // Open lightbox
+                mainImageWrap.addEventListener('click', () => {
+                    if (typeof fsLightboxInstances !== 'undefined' && fsLightboxInstances['productGallery']) {
+                        fsLightboxInstances['productGallery'].open(currentIndex);
+                    }
+                });
+            }
+        });
+    </script>
 </Layout>

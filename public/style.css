@@ -2058,7 +2058,7 @@ body.menu-open {
     width: 100%;
     padding: 1.6rem;
     font-size: 1.6rem;
-    font-weight: 600;
+    font-weight: 500;
     display: flex;
     gap: 1rem;
 }
@@ -3253,6 +3253,11 @@ body.menu-open {
 
 .thumb-item:hover {
     border-color: var(--dark);
+    opacity: 0.8;
+}
+
+.thumb-item.active {
+    border: 2px solid var(--yellow);
 }
 
 .thumb-item img {
@@ -3616,7 +3621,7 @@ body.menu-open {
 .contact-info-text a {
     text-decoration: none;
     font-size: 1.8rem;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--dark);
     margin-bottom: 0.2rem;
 }
@@ -3953,6 +3958,11 @@ body.search-open {
 
 .likvidace-hero-action .btn-phone {
     white-space: nowrap;
+}
+
+.likvidace-hero-action .btn-phone:hover {
+    background-color: var(--yellow-dark);
+    color: var(--dark);
 }
 
 .likvidace-hero-action {
