@@ -1,4 +1,4 @@
-# Autovrakoviště Sviadnov (IVRAKY.cz)
+# Autovrakoviště Sviadnov
 
 Moderní webová prezentace pro autovrakoviště, výkup a ekologickou likvidaci autovraků, prodej náhradních dílů a autoservis. Projekt je postaven na rychlém a moderním statickém generátoru [Astro](https://astro.build/) s čistým HTML a custom CSS pro maximální rychlost a uživatelský zážitek.
 
