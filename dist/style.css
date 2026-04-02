@@ -1177,6 +1177,12 @@ section {
     font-weight: 400;
 }
 
+.site-header-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 1002;
+}
+
 .site-header {
     background-color: #111417;
     position: relative;
@@ -1390,9 +1396,19 @@ body.menu-open {
         justify-content: flex-end;
     }
 
-    .header-top-bar,
+    /* On mobile: site-header fixed at top, top-bar flows below and scrolls away */
+    .site-header-wrapper {
+        position: static;
+        display: block;
+        padding-top: 7rem; /* matches .header-container height on mobile */
+    }
+
     .site-header {
-        position: relative;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
         z-index: 1002;
     }
 
