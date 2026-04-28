@@ -96,27 +96,27 @@ import VrakovisteSidebar from '../components/VrakovisteSidebar.astro';
                         <div class="contact-form-grid">
                             <div class="form-group">
                                 <label for="name">Vaše jméno</label>
-                                <input type="text" id="name" placeholder="Petr Novák" />
+                                <input type="text" id="name" placeholder="Petr Novák" required />
                             </div>
                             <div class="form-group">
                                 <label for="phone">Váš telefon</label>
-                                <input type="tel" id="phone" />
+                                <input type="tel" id="phone" required />
                             </div>
                         </div>
 
                         <div class="form-group" style="margin-bottom: 3rem;">
                             <label for="email">Váš e-mail</label>
-                            <input type="email" id="email" />
+                            <input type="email" id="email" required />
                         </div>
 
                         <div class="form-group" style="margin-bottom: 4rem;">
                             <label for="message">Zpráva</label>
-                            <textarea id="message" placeholder="text zprávy...."></textarea>
+                            <textarea id="message" placeholder="text zprávy...." required></textarea>
                         </div>
 
                         <div class="contact-form-footer">
                             <label class="gdpr-wrap">
-                                <input type="checkbox" />
+                                <input type="checkbox" required />
                                 <span>Odesláním formuláře potvrzuji seznámení s Poučením a zpracování osobních
                                     údajů</span>
                             </label>

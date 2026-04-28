@@ -1400,7 +1400,8 @@ body.menu-open {
     .site-header-wrapper {
         position: static;
         display: block;
-        padding-top: 7rem; /* matches .header-container height on mobile */
+        padding-top: 7rem;
+        /* matches .header-container height on mobile */
     }
 
     .site-header {
@@ -3131,6 +3132,8 @@ body.menu-open {
     padding: 0 1.8rem;
     font-size: 1.5rem;
     font-weight: 500;
+    line-height: 1;
+    white-space: nowrap;
 }
 
 @media screen and (max-width: 1200px) {
@@ -4014,4 +4017,14 @@ body.search-open {
         font-size: 1.8rem;
         margin-bottom: 2rem;
     }
+}
+
+¨ .form-success {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--green);
+    font-family: var(--font-headings);
+    background: #e6f2ec;
+    padding: 10px;
+
 }
