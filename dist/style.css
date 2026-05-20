@@ -4020,7 +4020,7 @@ body.search-open {
     }
 }
 
-¨ .form-success {
+.form-success {
     font-size: 1.8rem;
     font-weight: 600;
     color: var(--green);
@@ -4028,4 +4028,12 @@ body.search-open {
     background: #e6f2ec;
     padding: 10px;
 
+}
+
+
+
+.blog-detail-content ul,
+.blog-detail-content ol {
+    list-style: initial;
+    padding-left: 20px;
 }
